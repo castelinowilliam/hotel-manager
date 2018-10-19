@@ -1,0 +1,95 @@
+<h1 id="banner">Indian Flavours</h1>
+<div class="container">
+ <form>  
+    <div class="form-group">
+        <label for="inputState">Table Number</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+        <label for="inputState">Starters</label>
+        <select  class="form-control">
+            {{#each dishes}}
+                <option>
+                <label>{{ this.title }}</label>    
+                </option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Price</label><br>
+        {{#each dishes}}
+            <label for="inputState">{{ this.price }}</label>
+        {{/each}}    
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Quantity</label>
+        <select id="quant" class="form-control" onchange="calculateTotal()">
+            <option selected>1</option>
+            <option>2</option>
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Total</label><br>
+        <label for="inputState" id="total"></label>
+        </div>
+    </div>
+        <div class="form-row">
+        <div class="form-group col-md-8">
+        <label for="inputState">Main Course</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Quantity</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+    </div>
+        <div class="form-row">
+        <div class="form-group col-md-8">
+        <label for="inputState">Drinks</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Quantity</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+        <label for="inputState">Desserts</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Quantity</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-info">Save</button>
+        <button type="submit" class="btn btn-danger">Final Submit</button>
+ </form>
+</div>
