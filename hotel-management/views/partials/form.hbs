@@ -1,0 +1,242 @@
+<div class="container">
+ <form>  
+    <div class="form-group">
+        <label for="inputState">Table Number</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <label for="inputState">Starters</label>
+        <select  id="price" class="form-control" onchange="calculateTotal()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Quantity</label>
+        <select id="quant" class="form-control" onchange="calculateTotal()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Total</label><br>
+        <label for="inputState" id="total"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <select  id="pricea" class="form-control" onchange="calculateTotala()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <select id="quanta" class="form-control" onchange="calculateTotala()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState" id="totala"></label>
+        </div>
+    </div>
+
+    <!---Main Course Dishes--->
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <label for="inputState">Main Course</label>
+        <select  id="price1" class="form-control" onchange="calculateTotal1()">
+            {{#each main1}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Quantity</label>
+        <select id="quant1" class="form-control" onchange="calculateTotal1()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Total</label><br>
+        <label for="inputState" id="total1"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <select  id="price1a" class="form-control" onchange="calculateTotal1a()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <select id="quant1a" class="form-control" onchange="calculateTotal1a()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState" id="total1a"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <select  id="price1b" class="form-control" onchange="calculateTotal1b()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <select id="quant1b" class="form-control" onchange="calculateTotal1b()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState" id="total1b"></label>
+        </div>
+    </div>    
+
+    <!---Drinks--->
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <label for="inputState">Drinks</label>
+        <select  id="price2" class="form-control" onchange="calculateTotal2()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Quantity</label>
+        <select id="quant2" class="form-control" onchange="calculateTotal2()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Total</label><br>
+        <label for="inputState" id="total2"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <select  id="price2a" class="form-control" onchange="calculateTotal2a()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <select id="quant2a" class="form-control" onchange="calculateTotal2a()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState" id="total2a"></label>
+        </div>
+    </div>
+
+    <!---Desserts--->
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <label for="inputState">Desserts</label>
+        <select  id="price3" class="form-control" onchange="calculateTotal3()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputState">Quantity</label>
+        <select id="quant3" class="form-control" onchange="calculateTotal3()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">Total</label><br>
+        <label for="inputState" id="total3"></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+        <select  id="price3a" class="form-control" onchange="calculateTotal3a()">
+            {{#each dishes}}
+                <option>{{ this.title }}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                {{ this.price }}</option>
+            {{/each}}
+        </select>
+        </div>
+        <div class="form-group col-md-3">
+        <select id="quant3a" class="form-control" onchange="calculateTotal3a()">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState" id="total3a"></label>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-info">Save</button>
+        <button type="submit" class="btn btn-danger">Final Submit</button>
+ </form>
+</div>
