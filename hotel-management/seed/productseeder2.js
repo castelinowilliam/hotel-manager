@@ -37,11 +37,11 @@ var  main1 = [
         price: 15
     }),
     new Product2({
-        title: 'Puri',
+        title: 'Puri (1 pc)',
         price: 07
     }),
     new Product2({
-        title: 'Pav',
+        title: 'Pav (1 pc)',
         price: 05
     }),
 ];

@@ -15,7 +15,7 @@
         <div class="form-group col-md-5">
         <label for="inputState">Starters</label>
         <select  id="price" class="form-control" onchange="calculateTotal()">
-            {{#each dishes}}
+            {{#each data.dishes}}
                 <option>{{ this.title }}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                 {{ this.price }}</option>
@@ -40,7 +40,7 @@
     <div class="form-row">
         <div class="form-group col-md-5">
         <select  id="pricea" class="form-control" onchange="calculateTotala()">
-            {{#each dishes}}
+            {{#each data.dishes}}
                 <option>{{ this.title }}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                 {{ this.price }}</option>
@@ -66,7 +66,7 @@
         <div class="form-group col-md-5">
         <label for="inputState">Main Course</label>
         <select  id="price1" class="form-control" onchange="calculateTotal1()">
-            {{#each main1}}
+            {{#each data.main1}}
                 <option>{{ this.title }}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                 {{ this.price }}</option>
@@ -91,7 +91,7 @@
     <div class="form-row">
         <div class="form-group col-md-5">
         <select  id="price1a" class="form-control" onchange="calculateTotal1a()">
-            {{#each dishes}}
+            {{#each data.main2}}
                 <option>{{ this.title }}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                 {{ this.price }}</option>
@@ -114,7 +114,7 @@
     <div class="form-row">
         <div class="form-group col-md-5">
         <select  id="price1b" class="form-control" onchange="calculateTotal1b()">
-            {{#each dishes}}
+            {{#each data.main3}}
                 <option>{{ this.title }}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                 {{ this.price }}</option>
