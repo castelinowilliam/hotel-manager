@@ -95,7 +95,7 @@
       }
       window.onload = calculateTotal3;
     </script>
-        <script type="text/javascript">
+    <script type="text/javascript">
       function calculateTotal3a(){
         var val1 = document.getElementById('price3a').value;
         var v1 = val1.substring(16,45);
@@ -105,5 +105,43 @@
       }
       window.onload = calculateTotal3;
     </script>
+    <script type="text/javascript">
+      function grandTotal(){
+        var v1 = document.getElementById('total').value;
+        console.log(v1);
+        var v2 = document.getElementById('totala').value;
+        console.log(v2);
+        var v3 = document.getElementById('total1').value;
+        console.log(v3);
+        var v4 = document.getElementById('total1a').value;
+        console.log(v4);
+        var v5 = document.getElementById('total1b').value;
+        console.log(v5);
+        var v6 = document.getElementById('total2').value;
+        console.log(v6);
+        var v7 = document.getElementById('total2a').value;
+        console.log(v7);
+        var v8 = document.getElementById('total3').value;
+        console.log(v8);
+        var v9 = document.getElementById('total3a').value;
+        console.log(v9);
+        var gt = v1 + v2 + v3 + v4 + v5 + v6 + v7 + v8 + v9;
+          document.getElementById("grandtotal").innerHTML = + gt;
+      }
+      window.onload = grandTotal;
+    </script>
+    <!--<script>
+      $('.amount').keyup(function(){
+        var result = 0;
+        $('#grandtotal').attr('value', function(){
+          $('.amount').each(function(){
+            if($(this).val()!==''){
+              result += parseInt($(this).val());
+            }
+          });
+          return result;
+        });
+      });
+    </script>-->
   </body>
 </html>
