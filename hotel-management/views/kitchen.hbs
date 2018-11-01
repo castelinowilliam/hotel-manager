@@ -1,43 +1,67 @@
-{{#each orders}}
-<table>
-    <tr>
-        <td>{{ this.tableno }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.start1 }}</td>
-        <td>{{ this.qty1 }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.start2 }}</td>
-        <td>{{ this.qty2 }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.main1 }}</td>
-        <td>{{ this.qty3 }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.main2 }}</td>
-        <td>{{ this.qty4 }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.main3 }}</td>
-        <td>{{ this.qty5 }}</td>
-    </tr>        
-    <tr>
-        <td>{{ this.drink1 }}</td>
-        <td>{{ this.qty6 }}</td>
-    </tr>    
-    <tr>
-        <td>{{ this.drink2 }}</td>
-        <td>{{ this.qty7 }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.des1 }}</td>
-        <td>{{ this.qty8 }}</td>
-    </tr>
-    <tr>
-        <td>{{ this.des2 }}</td>
-        <td>{{ this.qty9 }}</td>
-    </tr>
-</table>
-{{/each}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    {{#each orders }}
+    <div>
+        <table id="table1">
+            <tr>
+                <td colspan="2"> Table No.{{ this.tableno }}</td>
+            </tr>
+            <tr>
+                <th>Food items</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td>{{ this.start1 }}</td>
+                <td>{{ this.qty1 }}</td>
+            </tr>
+            <tr>
+                <td>{{ this.start2 }}</td>
+                <td>{{ this.qty2 }}</td>
+            </tr>
+            <tr>
+                <td>{{ this.main1 }}</td>
+                <td>{{ this.qty3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ this.main2 }}</td>
+                <td>{{ this.qty4 }}</td>
+            </tr>
+            <tr>
+                <td>{{ this.main3 }}</td>
+                <td>{{ this.qty5 }}</td>
+            </tr>        
+            <tr>
+                <td>{{ this.drink1 }}</td>
+                <td>{{ this.qty6 }}</td>
+            </tr>    
+            <tr>
+                <td>{{ this.drink2 }}</td>
+                <td>{{ this.qty7 }}</td>
+            </tr>
+            <tr>
+                <td>{{ this.des1 }}</td>
+                <td>{{ this.qty8 }}</td>
+            </tr>
+            <tr>
+                <td>{{ this.des2 }}</td>
+                <td>{{ this.qty9 }}</td>
+            </tr> 
+            <tr>
+                <td colspan="2"><button class="btn btn-danger">Delete</button></td>
+            </tr>   
+        </table>
+    </div>   
+    {{/each}}
+    <script type="text/javascript">
+        function display(){
+            var v1 = document.getElementsByName({{ this.start1 }}).innerHTML;
+            var vs1 = v1.substring(0,15);
+            document.getElementById("start1").innerHTML = + vs1;
+        }
+    </script>
+</body>
+</html>

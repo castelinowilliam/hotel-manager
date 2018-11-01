@@ -88,10 +88,10 @@ app.post('/kitchen', function(req, res){
   res.send('Data:\n' + JSON.stringify(req.body));
 });*/
 
-var orders = mongoose.model('myform', schema);
+var order = mongoose.model('myform', schema);
 
-app.post('/view', function(req, res){
-  new orders({
+app.post('/new', function(req, res){
+  new order({
     tableno: req.body.tableno,
     start1: req.body.start1,
     qty1: req.body.qty1,
@@ -125,20 +125,31 @@ app.post('/view', function(req, res){
       res.json(err);
     }
     else{
-      res.redirect('/kitchen');
+      res.redirect('/view');
     }
   });
 });
 
-app.get('/kitchen', function(req, res){
-  orders.find({},function(err, docs){
+app.get('/view', function(req, res){
+  order.find({},function(err, docs){
     if(err){
       res.json(err);
     }
     else{
-      res.render('hotel/index',{orders: docs});
+      res.render('kitchen',{orders: docs});
     }
   });
+});
+
+app.delete('view/:id',function(req, res){
+  console.log('Deleting...');
+  order.findByIdAndRemove(req.params.id), function(err, result){
+    if(err){
+      res.send("error");
+    }else{
+      res.json(result);
+    }
+  }
 });
 
 // catch 404 and forward to error handler

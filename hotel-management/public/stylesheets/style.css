@@ -12,3 +12,28 @@
     text-align: center;
     font-family: Comic Sans Ms;
 }
+
+#table1{
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    border: 1px solid black;
+    padding: 25px;
+}
+
+th{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.ellipsis{
+    max-width: 500px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
