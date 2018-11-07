@@ -133,7 +133,6 @@ app.get('/view', function(req, res){
 
 app.get('/orders/delete/:id', function(req, res, next){
   order.findByIdAndDelete({_id:req.params.id}, function(err,delData) {
-    console.log(delData);
     if(err){
       res.send('error');
     }else{
