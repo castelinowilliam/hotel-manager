@@ -1,6 +1,6 @@
 <h1 id="banner">Indian Flavours</h1>
 <div class="container">
- <form method="POST" action="/new">
+ <form method="POST" action="/new" target="_self">
         <label for="inputState">Table Number</label>
         <select id="inputState" class="form-control" name="tableno">
             <option selected>Choose...</option>
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group col-md-4">
         <label for="inputState">Total</label><br>
-        <input type="text" name="s1" id="total" readonly>
+        <input class="form-control" type="text" name="s1" id="total" readonly>
         </div>
     </div>
     <div class="form-row">
@@ -56,7 +56,7 @@
         </select>
         </div>
         <div class="form-group col-md-4">
-        <input type="text" name="s2" id="totala" readonly>
+        <input class="form-control" type="text" name="s2" id="totala" readonly>
         </div>
     </div>
 
@@ -84,7 +84,7 @@
         </div>
         <div class="form-group col-md-4">
         <label for="inputState">Total</label><br>
-        <input type="text" name="m1" id="total1" readonly>
+        <input class="form-control" type="text" name="m1" id="total1" readonly>
         </div>
     </div>
     <div class="form-row">
@@ -107,7 +107,7 @@
         </select>
         </div>
         <div class="form-group col-md-4">
-        <input type="text" name="m2" id="total1a" readonly>
+        <input class="form-control" type="text" name="m2" id="total1a" readonly>
         </div>
     </div>
     <div class="form-row">
@@ -130,7 +130,7 @@
         </select>
         </div>
         <div class="form-group col-md-4">
-        <input type="text" name="m3" id="total1b" readonly>
+        <input class="form-control" type="text" name="m3" id="total1b" readonly>
         </div>
     </div>    
 
@@ -158,7 +158,7 @@
         </div>
         <div class="form-group col-md-4">
         <label for="inputState">Total</label><br>
-        <input type="text" name="dr1" id="total2" readonly>
+        <input class="form-control" type="text" name="dr1" id="total2" readonly>
         </div>
     </div>
     <div class="form-row">
@@ -181,7 +181,7 @@
         </select>
         </div>
         <div class="form-group col-md-4">
-        <input type="text" name="dr2" id="total2a" readonly>
+        <input class="form-control" type="text" name="dr2" id="total2a" readonly>
         </div>
     </div>
 
@@ -209,7 +209,7 @@
         </div>
         <div class="form-group col-md-4">
         <label for="inputState">Total</label><br>
-        <input type="text" name="de1" id="total3" readonly>
+        <input class="form-control" type="text" name="de1" id="total3" readonly>
         </div>
     </div>
     <div class="form-row">
@@ -232,20 +232,10 @@
         </select>
         </div>
         <div class="form-group col-md-4">
-        <input type="text" name="de2" id="total3a" readonly>
+        <input class="form-control" type="text" name="de2" id="total3a" readonly>
         </div>
     </div>
-    <div class="form-row">
-        <div class="form-group col-md-5">
-        </div>
-        <div class="form-group col-md-3">
-            <label for="inputState">Grand Total</label>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputState" id="grandtotal"></label>
-        </div>
-    </div>
-        <input type="submit" class="btn btn-success" value="Kitchen"/>
-        <a href="" class="btn btn-danger" role="button">Manager</a>        
+        <button type="submit" class="btn-danger btn-lg">Kitchen</button>
+        <!--<a href="/get-data" class="btn btn-danger" role="button">Manager</a>  -->      
  </form>
 </div>

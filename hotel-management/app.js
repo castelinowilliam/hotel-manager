@@ -10,11 +10,18 @@ var bodyParser = require('body-parser');
 var hepler = require('handlebars-helpers');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var order = require('../hotel-management/models/userform')
 
 var indexRouter = require('./routes/index');
 var app = express();
 
 mongoose.connect("mongodb://localhost:27017/menus",{ useNewUrlParser: true});
+
+// view engine setup
+app.engine('.hbs',expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.set('view engine', '.hbs');
+
+//app.set('views', path.join(__dirname, 'views'));
 
 var Schema = mongoose.Schema;
 
@@ -49,13 +56,7 @@ var schema = new Schema({
     de2: {type: Number}
 });
 
-//module.exports = mongoose.model('myform', schema);
-
-// view engine setup
-app.engine('.hbs',expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
-app.set('view engine', '.hbs');
-
-//app.set('views', path.join(__dirname, 'views'));
+var order = mongoose.model('myform', schema);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -78,17 +79,6 @@ app.use(function(req, res, next){
 
 app.use('/', indexRouter);
 
-/*var dbConn = mongodb.MongoClient.connect("mongodb://localhost:27017", {useNewUrlParser: true});
-
-app.post('/kitchen', function(req, res){
-  dbConn.then(function(db){
-    delete req.body._id;
-    db.collection('orders').insert(req.body);
-  });
-  res.send('Data:\n' + JSON.stringify(req.body));
-});*/
-
-var order = mongoose.model('myform', schema);
 
 app.post('/new', function(req, res){
   new order({
@@ -125,7 +115,7 @@ app.post('/new', function(req, res){
       res.json(err);
     }
     else{
-      res.redirect('/view');
+      res.redirect('/');
     }
   });
 });
@@ -141,15 +131,15 @@ app.get('/view', function(req, res){
   });
 });
 
-app.delete('view/:id',function(req, res){
-  console.log('Deleting...');
-  order.findByIdAndRemove(req.params.id), function(err, result){
+app.get('/orders/delete/:id', function(req, res, next){
+  order.findByIdAndDelete({_id:req.params.id}, function(err,delData) {
+    console.log(delData);
     if(err){
-      res.send("error");
+      res.send('error');
     }else{
-      res.json(result);
+      res.redirect("/view");
     }
-  }
+  });
 });
 
 // catch 404 and forward to error handler
