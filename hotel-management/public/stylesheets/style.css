@@ -3,7 +3,6 @@
     max-width:70%;
     display:block;
     border: 5px solid;
-    font-family:Comic Sans Ms;
     text-align:center;
     margin: auto;
 }
@@ -39,4 +38,23 @@ th{
     text-align: right;
     overflow: hidden;
     white-space: nowrap; 
+}
+
+#ManTable{
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#design{
+    background-color: aquamarine;
+    display: inline-block;
+    width: 70%;
+}
+
+.wrapper{
+    text-align: center;
 }

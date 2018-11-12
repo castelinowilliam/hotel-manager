@@ -4,7 +4,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
+    <script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous">
+    </script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!--<script src="https://github.com/js-cookie/js-cookie"></script>-->
     {{#each orders }}
+        <div id="myid{{ @index }}">
         <table id="table1">
             <tr>
                 <td colspan="2"> Table No.{{ this.tableno }}</td>
@@ -50,9 +58,101 @@
                 <td>{{ this.qty9 }}</td>
             </tr> 
             <tr>
-                <td colspan="2"> <a href="/orders/delete/{{ this._id }}" class="btn btn-danger btn-lg"> Delete </a></td>
+                <td colspan="2"><button class="btn-primary btn-lg" id="done">Done</button></td>
+                <!--<td><a href="javascript:void(null);" id="hideit">Close</a></td>-->
             </tr>
         </table>
+        </div>
+    <script>
+        $(function(){
+        
+            if (localStorage) { 
+                if (localStorage.getItem('visited1')) { 
+                    $("#myid0").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid0").click(function(){
+                $(this).hide();
+                localStorage.setItem('visited1', true); 
+                return false;
+            });
+        });
+    </script>
+        <script>
+        $(function(){
+        
+            if (localStorage) { 
+                if (localStorage.getItem('visited2')) { 
+                    $("#myid1").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid1").click(function(){
+                $(this).hide();
+                localStorage.setItem('visited2', true); 
+                return false;
+            });
+        });
+    </script>
+        <script>
+        $(function(){
+        
+            if (localStorage) { 
+                if (localStorage.getItem('visited3')) { 
+                    $("#myid2").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid2").click(function(){
+                $(this).hide();
+                localStorage.setItem('visited3', true); 
+                return false;
+            });
+        });
+    </script>
+        <script>
+        $(function(){
+        
+            if (localStorage) { 
+                if (localStorage.getItem('visited4')) { 
+                    $("#myid3").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid3").click(function(){
+                $(this).hide();
+                localStorage.setItem('visited4', true); 
+                return false;
+            });
+        });
+    </script>
+        <script>
+        $(function(){
+        
+            if (localStorage) { 
+                if (localStorage.getItem('visited5')) { 
+                    $("#myid4").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid4").click(function(){
+                $(this).hide();
+                localStorage.setItem('visited5', true); 
+                return false;
+            });
+        });
+    </script>
     {{/each}}
 </body>
 </html>

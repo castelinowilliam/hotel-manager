@@ -10,7 +10,6 @@ var bodyParser = require('body-parser');
 var hepler = require('handlebars-helpers');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var order = require('../hotel-management/models/userform')
 
 var indexRouter = require('./routes/index');
 var app = express();
@@ -79,7 +78,6 @@ app.use(function(req, res, next){
 
 app.use('/', indexRouter);
 
-
 app.post('/new', function(req, res){
   new order({
     tableno: req.body.tableno,
@@ -131,12 +129,33 @@ app.get('/view', function(req, res){
   });
 });
 
-app.get('/orders/delete/:id', function(req, res, next){
+app.get('/manager', function(req, res){
+  order.find({},function(err, doc){
+    if(err){
+      res.json(err);
+    }
+    else{
+      res.render('manager',{ordersM: doc});
+    }
+  });
+});
+
+/*app.get('/orders/delete/:id', function(req, res, next){
   order.findByIdAndDelete({_id:req.params.id}, function(err,delData) {
     if(err){
       res.send('error');
     }else{
       res.redirect("/view");
+    }
+  });
+});*/
+
+app.get('/manager/delete/:id', function(req, res, next){
+  order.findByIdAndDelete({_id:req.params.id}, function(err,delData) {
+    if(err){
+      res.send('error');
+    }else{
+      res.redirect("/manager");
     }
   });
 });
