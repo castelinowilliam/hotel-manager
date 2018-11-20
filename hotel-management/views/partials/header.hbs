@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="nav-link" href="/hotel/seats">
+          <i class="fas fa-couch"></i> Book Seats
+         </a>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> 
+          User Profile
+        </a>
+        <ul class="dropdown-menu">
+          {{#if login}}
+              <li><a class="dropdown-item" href="/user/profile">Account</a></li>
+              <li role="separator" class="divider"></li>
+              <a class="dropdown-item" href="/manager">Logout</a>
+          {{else}}
+              <li><a class="dropdown-item" href="/user/signup">Sign Up</a></li>
+              <li><a class="dropdown-item" href="/user/signin">Sign In</a></li>
+          {{/if}}
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -4,17 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
-var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var hepler = require('handlebars-helpers');
 var session = require('express-session');
+var passport = require('passport');
+var flash = require('connect-flash');
+var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 
 var indexRouter = require('./routes/index');
+var userRoutes = require('./routes/user');
+
 var app = express();
 
 mongoose.connect("mongodb://localhost:27017/menus",{ useNewUrlParser: true});
+
+require('./config/passport');
 
 // view engine setup
 app.engine('.hbs',expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
@@ -61,8 +66,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.urlencoded({ extended: false }));
+app.use(validator());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'mysupersecret',
   resave: false,
@@ -70,13 +75,16 @@ app.use(session({
   store: new MongoStore({ mongooseConnection: mongoose.connection}),
   cookie: { maxAge: 180 * 60 * 1000 }
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next){
+  res.locals.login = req.isAuthenticated();
   res.locals.session = req.session;
-  next()
+  next();
 });
-
-app.use('/', indexRouter);
 
 app.post('/new', function(req, res){
   new order({
@@ -124,7 +132,7 @@ app.get('/view', function(req, res){
       res.json(err);
     }
     else{
-      res.render('kitchen',{orders: docs});
+      res.render('hotel/kitchen',{orders: docs});
     }
   });
 });
@@ -135,20 +143,11 @@ app.get('/manager', function(req, res){
       res.json(err);
     }
     else{
-      res.render('manager',{ordersM: doc});
+      res.render('hotel/manager',{ordersM: doc});
     }
   });
 });
 
-/*app.get('/orders/delete/:id', function(req, res, next){
-  order.findByIdAndDelete({_id:req.params.id}, function(err,delData) {
-    if(err){
-      res.send('error');
-    }else{
-      res.redirect("/view");
-    }
-  });
-});*/
 
 app.get('/manager/delete/:id', function(req, res, next){
   order.findByIdAndDelete({_id:req.params.id}, function(err,delData) {
@@ -159,6 +158,9 @@ app.get('/manager/delete/:id', function(req, res, next){
     }
   });
 });
+
+app.use('/user', userRoutes)
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
