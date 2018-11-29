@@ -30,6 +30,7 @@ app.set('view engine', '.hbs');
 var Schema = mongoose.Schema;
 
 var schema = new Schema({
+    time: {type: Date, required:true},
     tableno: {type: Number, required:true},
     start1: {type: String},
     qty1: {type: Number},
@@ -79,6 +80,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(function(req, res, next){
   res.locals.login = req.isAuthenticated();
@@ -88,6 +90,7 @@ app.use(function(req, res, next){
 
 app.post('/new', function(req, res){
   new order({
+    time: new Date(),
     tableno: req.body.tableno,
     start1: req.body.start1,
     qty1: req.body.qty1,
@@ -157,6 +160,10 @@ app.get('/manager/delete/:id', function(req, res, next){
       res.redirect("/manager");
     }
   });
+});
+
+app.get('/seats',function(req, res){
+  res.render('hotel/seats');
 });
 
 app.use('/user', userRoutes)

@@ -12,10 +12,10 @@ router.get('/profile', isLoggedIn, function(req, res, next){
 
 router.get('/logout', isLoggedIn, function(req, res, next){
     req.logout();
-    res.redirect('/');
+    res.redirect('/manager');
 });
 
-router.use('/', notisLoggedIn, function(req, res, next){
+router.use('/manager', notisLoggedIn, function(req, res, next){
     next();
 });
 
