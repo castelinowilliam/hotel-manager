@@ -6,8 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     {{> header}}
-    <h1>Manager's Profile</h1>
+     <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"></script>
+
+    <h1>Transactions</h1>
+    <div>
+        <form>
+            <input type="date" name="transDate" id="transDate">
+            <button type="button" id="ordersBtn">SUBMIT</button>
+        </form>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('#ordersBtn').click(function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        //document.getElementById("orders").innerHTML = this.responseText;
+        console.log(this.responseText);
+    }
+  };
+  var transDate = $('#transDate').val();
+    console.log("Date", transDate);
+    xhttp.open("GET", `http://localhost:3000/api/profile?date=${transDate}`, true);
+    xhttp.send();
+            });
+    });
+    </script>
+
+    <div id="orders">
+
+    </div>
 </body>
 </html>

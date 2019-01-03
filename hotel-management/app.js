@@ -11,6 +11,9 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
+var cors = require('cors');
+//var htmlpdf = require('html-to-pdf');
+//var phantom = require('phantom');
 
 var indexRouter = require('./routes/index');
 var userRoutes = require('./routes/user');
@@ -22,10 +25,21 @@ mongoose.connect("mongodb://localhost:27017/menus",{ useNewUrlParser: true});
 require('./config/passport');
 
 // view engine setup
+app.use(cors());
 app.engine('.hbs',expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 //app.set('views', path.join(__dirname, 'views'));
+
+/*htmlpdf.convertHTMLFile('hotel/manager.hbs', '../print.pdf',
+  function(error, success){
+    if(error){
+      console.log('Error');
+    }else{
+      console.log('No Error');
+    }
+  }
+);*/
 
 var Schema = mongoose.Schema;
 
@@ -58,7 +72,8 @@ var schema = new Schema({
     de1: {type: Number},
     des2: {type: String},
     qty9: {type: Number},
-    de2: {type: Number}
+    de2: {type: Number},
+    finaltotal: {type: Number}
 });
 
 var order = mongoose.model('myform', schema);
@@ -119,6 +134,7 @@ app.post('/new', function(req, res){
     des2: req.body.des2,
     qty9: req.body.qty9,
     de2: req.body.de2,
+    finaltotal: req.body.finaltotal,
   }).save(function(err, result){
     if(err){
       res.json(err);
@@ -128,6 +144,39 @@ app.post('/new', function(req, res){
     }
   });
 });
+
+app.get('/api/profile', (req, res) => {
+
+  console.log("Query date", req.query.date);
+  let date = Date.parse(req.query.date);
+
+  console.log(date);
+
+  let date1 = new Date(date);
+  let date2 = new Date(date);
+  date2.setDate(date1.getDate()+1);
+
+  console.log("Date", date1);
+  console.log("Next Date", date2);
+
+  order.find({
+    'time': {"$gte": date1, "$lt": date2}
+  }, (err, data) => {
+    console.log("data", data);
+
+    if(err){
+     res.json({
+        err
+      });
+    } else {
+      res.json({
+        orders: data
+      });
+    }
+    
+  })
+  
+})
 
 app.get('/view', function(req, res){
   order.find({},function(err, docs){
@@ -160,6 +209,10 @@ app.get('/manager/delete/:id', function(req, res, next){
       res.redirect("/manager");
     }
   });
+});
+
+app.get('/manager/print/:id', function (req, res, next) {
+  
 });
 
 app.get('/seats',function(req, res){

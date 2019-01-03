@@ -8,6 +8,8 @@
     {{#each ordersM }}
     <div class="wrapper">
         <div id="design">
+            <h4>Indian Flavors</h4>
+            <h6>{{ this.time }}</h6>
         <table id="ManTable">
             <tr>
                 <td colspan="3"> Table No.{{ this.tableno }}</td>
@@ -62,7 +64,7 @@
                 <td>{{ this.qty9 }}</td>
                 <td id="p9" onkeyup="total()">{{ this.de2 }}</td>
             </tr> 
-            <tr>
+            <!--<tr>
                 <td colspan="2"><button onclick="total()" class="btn btn-primary">Total</button></td>
                 <td id="total"></td>
             </tr>
@@ -74,12 +76,17 @@
             <tr>
                 <td>SGST</td>
                 <td>2.5%</td>
-            </tr>
+            </tr>-->
             <tr>
+                <td colspan="2">Total</td>
+                <td id="p10">{{ this.finaltotal }}</td>
+            </tr>
+            <!--<tr>
                 <td colspan="2"><button onclick="ftotal()" class="btn btn-success">Final Total</button></td>
                 <td id="ftotal"></td>
-            </tr>
+            </tr>-->
         </table>
+        <a href="/manager/print/{{ this._id }}" class="btn btn-success btn-lg float-right"> Print </a>
         <a href="/manager/delete/{{ this._id }}" class="btn btn-danger btn-lg float-right"> Paid </a>
     </div>
     </div>

@@ -1,3 +1,36 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+         function ftotal(){
+            alert("Hello");
+            var v1 = +document.getElementById('total').value;
+            console.log(v1);
+            var v2 = +document.getElementById('totala').value;
+            console.log(v2);
+            var v3 = +document.getElementById('total1').value;
+            console.log(v3);
+            var v4 = +document.getElementById('total1a').value;
+            console.log(v4);
+            var v5 = +document.getElementById('total1b').value;
+            console.log(v5);
+            var v6 = +document.getElementById('total2').value;
+            console.log(v6);
+            var v7 = +document.getElementById('total2a').value;
+            console.log(v7);
+            var v8 = +document.getElementById('total3').value;
+            console.log(v8);
+            var v9 = +document.getElementById('total3a').value;
+            console.log(v9);
+            var total = v1 + v2 + v3 + v4 + v5 + v6 + v7 + v8 + v9;
+            document.getElementById("finaltotal").value = +total;
+        }
+
+        $(document).ready(()=> {
+            $("#ftotal").click(()=>{
+                ftotal();
+            });
+        });        
+</script>
 <h1 id="banner">Indian Flavours</h1>
 <div class="container">
  <form method="POST" action="/new" target="_self">
@@ -233,6 +266,17 @@
         </div>
         <div class="form-group col-md-4">
         <input class="form-control" type="text" name="de2" id="total3a" readonly>
+        </div>
+    </div>
+        <div class="form-row">
+        <div class="form-group col-md-5">
+            <p>.</p>
+        </div>
+        <div class="form-group col-md-3">
+            <button type="button" id="ftotal" class="btn btn-primary">Total</button>
+        </div>
+        <div class="form-group col-md-4">
+        <input class="form-control" type="text" name="finaltotal" id="finaltotal" readonly>
         </div>
     </div>
         <button type="submit" class="btn-danger btn-lg">Submit</button>

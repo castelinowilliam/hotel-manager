@@ -11,6 +11,7 @@
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "csurf": "^1.9.0",
     "debug": "~2.6.9",
     "express": "~4.16.0",
@@ -19,13 +20,16 @@
     "express-validator": "^5.3.0",
     "handlebars-helpers": "^0.10.0",
     "hbs": "~4.0.1",
+    "html-to-pdf": "^0.1.11",
     "http-errors": "~1.6.2",
     "mongodb": "^2.2.33",
     "mongoose": "^5.3.4",
     "morgan": "~1.9.0",
     "nodemon": "^1.18.7",
+    "ors": "^1.0.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "phantom": "^6.0.3",
     "session": "^0.1.0"
   }
 }
