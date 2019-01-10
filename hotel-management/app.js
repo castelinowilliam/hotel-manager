@@ -12,7 +12,10 @@ var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 var cors = require('cors');
-//var htmlpdf = require('html-to-pdf');
+var fs = require('fs');
+var templatetopdf = require('html-template-pdf');
+let pdf = require('handlebars-pdf');
+
 //var phantom = require('phantom');
 
 var indexRouter = require('./routes/index');
@@ -212,8 +215,36 @@ app.get('/manager/delete/:id', function(req, res, next){
 });
 
 app.get('/manager/print/:id', function (req, res, next) {
-  
-});
+  order.find({},function(err, docs){
+      if(err){
+        res.json(err);
+      }
+      else{
+        //console.log('Orders', docs);
+
+        let orderTemplate = '<div>{{#each docs}}<div><h3>Order placed on:</h3><p>{{ this.time }}</p></div><br><hr><br>{{/each}}</div>';
+        // docs.forEach( doc => {
+        //   msg = msg.concat(`${new Date(doc.time)}`);
+        // });
+
+        let document = {
+          template: orderTemplate,
+          context: {
+            docs
+          },
+          path: "./test.pdf"
+      }
+    
+        pdf.create(document)
+          .then(response => {
+              res.download("test.pdf");
+          })
+          .catch(error => {
+              console.error(error)
+          })
+        }
+    });
+  });
 
 app.get('/seats',function(req, res){
   res.render('hotel/seats');

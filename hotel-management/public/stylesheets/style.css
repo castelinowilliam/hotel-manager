@@ -24,9 +24,12 @@
     table-layout: fixed;
 }
 
-td{
+#food{
     border: 1px solid black;
-    padding: 25px;
+}
+
+#seat{
+    padding: 4px;
 }
 
 th{
@@ -57,4 +60,16 @@ th{
 
 .wrapper{
     text-align: center;
+}
+
+#layout{
+    border-color: white !important; 
+}
+
+#layout2{
+    margin-top: 11%;
+}
+
+.green{
+    color: green;
 }

@@ -20,49 +20,49 @@
                 <th>Price</th>
             </tr>
             <tr>
-                <td class="shift">{{ this.start1 }}</td>
-                <td>{{ this.qty1 }}</td>
-                <td  id="p1" onkeyup="total()">{{ this.s1 }}</td>
+                <td class="shift" id="food">{{ this.start1 }}</td>
+                <td id="food">{{ this.qty1 }}</td>
+                <td id="food">{{ this.s1 }}</td>
             </tr>
             <tr>
-                <td class="shift">{{ this.start2 }}</td>
-                <td>{{ this.qty2 }}</td>
-                <td id="p2" onkeyup="total()">{{ this.s2 }}</td>
+                <td class="shift"  id="food">{{ this.start2 }}</td>
+                <td id="food">{{ this.qty2 }}</td>
+                <td id="food" onkeyup="total()">{{ this.s2 }}</td>
             </tr>
             <tr>
-                <td class="shift">{{ this.main1 }}</td>
-                <td>{{ this.qty3 }}</td>
-                <td id="p3" onkeyup="total()">{{ this.m1 }}</td>
+                <td class="shift" id="food">{{ this.main1 }}</td>
+                <td id="food">{{ this.qty3 }}</td>
+                <td id="food" onkeyup="total()">{{ this.m1 }}</td>
             </tr>
             <tr>
-                <td class="shift">{{ this.main2 }}</td>
-                <td>{{ this.qty4 }}</td>
-                <td id="p4" onkeyup="total()">{{ this.m2 }}</td>
+                <td class="shift" id="food">{{ this.main2 }}</td>
+                <td id="food">{{ this.qty4 }}</td>
+                <td  id="food" onkeyup="total()">{{ this.m2 }}</td>
             </tr>
             <tr>
-                <td class="shift">{{ this.main3 }}</td>
-                <td>{{ this.qty5 }}</td>
-                <td id="p5" onkeyup="total()">{{ this.m3 }}</td>
+                <td class="shift" id="food">{{ this.main3 }}</td>
+                <td id="food">{{ this.qty5 }}</td>
+                <td id="food" onkeyup="total()">{{ this.m3 }}</td>
             </tr>        
             <tr>
-                <td class="shift">{{ this.drink1 }}</td>
-                <td>{{ this.qty6 }}</td>
-                <td id="p6" onkeyup="total()">{{ this.dr1 }}</td>
+                <td class="shift" id="food">{{ this.drink1 }}</td>
+                <td id="food">{{ this.qty6 }}</td>
+                <td id="food" onkeyup="total()">{{ this.dr1 }}</td>
             </tr>    
             <tr>
-                <td class="shift">{{ this.drink2 }}</td>
-                <td>{{ this.qty7 }}</td>
-                <td id="p7" onkeyup="total()">{{ this.dr2 }}</td>
+                <td class="shift" id="food">{{ this.drink2 }}</td>
+                <td id="food">{{ this.qty7 }}</td>
+                <td  id="food" onkeyup="total()">{{ this.dr2 }}</td>
             </tr>
             <tr>
-                <td class="shift">{{ this.des1 }}</td>
-                <td>{{ this.qty8 }}</td>
-                <td id="p8" onkeyup="total()">{{ this.de1 }}</td>
+                <td class="shift"  id="food">{{ this.des1 }}</td>
+                <td id="food">{{ this.qty8 }}</td>
+                <td id="food" onkeyup="total()">{{ this.de1 }}</td>
             </tr>
             <tr>
-                <td class="shift">{{ this.des2 }}</td>
-                <td>{{ this.qty9 }}</td>
-                <td id="p9" onkeyup="total()">{{ this.de2 }}</td>
+                <td class="shift" id="food">{{ this.des2 }}</td>
+                <td id="food">{{ this.qty9 }}</td>
+                <td id="food" onkeyup="total()">{{ this.de2 }}</td>
             </tr> 
             <!--<tr>
                 <td colspan="2"><button onclick="total()" class="btn btn-primary">Total</button></td>
@@ -79,7 +79,7 @@
             </tr>-->
             <tr>
                 <td colspan="2">Total</td>
-                <td id="p10">{{ this.finaltotal }}</td>
+                <td id="food">{{ this.finaltotal }}</td>
             </tr>
             <!--<tr>
                 <td colspan="2"><button onclick="ftotal()" class="btn btn-success">Final Total</button></td>
@@ -91,7 +91,7 @@
     </div>
     </div>
     {{/each}}
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         function total(){
             var v1 = +document.getElementById('p1').innerHTML;
             console.log(v1);
@@ -121,6 +121,6 @@
             var ftotal = ft * (1 + 0.050);
             document.getElementById("ftotal").innerHTML = +ftotal;
        } 
-    </script>
+    </script>-->
 </body>
 </html>

@@ -1,13 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     {{> header}}
-    <h1>Hello</h1>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous">
+    </script>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs1"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs1"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable1"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs1"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs1"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs1"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs1"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs2"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs2"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable2"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs2"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs2"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs2"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs2"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs3"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs3"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable3"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs3"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs3"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs3"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs3"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td id="seat" align="center"><i class="fas fa-chair fa-3x green chairs4"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs4"></i></td>
+                            <td id="seat"><i class="far fa-circle fa-6x green ctable4"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs4"></i></td>
+                        </tr>  
+                        <tr>
+                            <td></td>
+                            <td id="seat" align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs4"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td id="seat" align="center"><i class="fas fa-chair fa-3x green chairs5"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs5"></i></td>
+                            <td id="seat"><i class="far fa-circle fa-6x green ctable5"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs5"></i></td>
+                        </tr>  
+                        <tr>
+                            <td></td>
+                            <td id="seat" align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs5"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td id="seat" align="center"><i class="fas fa-chair fa-3x green chairs6"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs6"></i></td>
+                            <td id="seat"><i class="far fa-circle fa-6x green ctable6"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs6"></i></td>
+                        </tr>  
+                        <tr>
+                            <td></td>
+                            <td id="seat" align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs6"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs7"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs7"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable7"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs7"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs7"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs7"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs7"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs8"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs8"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable8"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs8"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs8"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs8"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs8"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs9"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs9"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable9"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs9"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs9"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs9"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs9"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td>
+                <div>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x green chairs10"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs10"></i></td>
+                            <td rowspan="2" id="seat"><i class="far fa-square fa-7x green ctable10"></i></td>
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs10"></i></td>
+                        </tr>  
+                        <tr>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-270 green chairs10"></i></td>  
+                            <td id="seat"><i class="fas fa-chair fa-3x fa-rotate-90 green chairs10"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="center"><i class="fas fa-chair fa-3x fa-rotate-180 green chairs10"></i></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        $(".ctable").click(function(){
+            $(".ctable").css({"color": "red"});
+            $(".chairs").css({"color": "red"});
+        });
+        $(".ctable1").click(function(){
+            $(".ctable1").css({"color": "red"});
+            $(".chairs1").css({"color": "red"});
+        });
+        $(".ctable2").click(function(){
+            $(".ctable2").css({"color": "red"});
+            $(".chairs2").css({"color": "red"});
+        });
+        $(".ctable3").click(function(){
+            $(".ctable3").css({"color": "red"});
+            $(".chairs3").css({"color": "red"});
+        });
+        $(".ctable4").click(function(){
+            $(".ctable4").css({"color": "red"});
+            $(".chairs4").css({"color": "red"});
+        });
+        $(".ctable5").click(function(){
+            $(".ctable5").css({"color": "red"});
+            $(".chairs5").css({"color": "red"});
+        });
+        $(".ctable6").click(function(){
+            $(".ctable6").css({"color": "red"});
+            $(".chairs6").css({"color": "red"});
+        });
+        $(".ctable7").click(function(){
+            $(".ctable7").css({"color": "red"});
+            $(".chairs7").css({"color": "red"});
+        });
+        $(".ctable8").click(function(){
+            $(".ctable8").css({"color": "red"});
+            $(".chairs8").css({"color": "red"});
+        });
+        $(".ctable9").click(function(){
+            $(".ctable9").css({"color": "red"});
+            $(".chairs9").css({"color": "red"});
+        });
+       /* $(".ctable10").click(function(){
+            $(".ctable10").css({"color": "red"});
+            $(".chairs10").css({"color": "red"});
+        });*/
+    </script>
+    <script>
+        $(function(){
+        
+            if (localStorage) { 
+                if (localStorage.getItem('booked')) { 
+                    $(".ctable10").css({"color": "red"});
+                    $(".chairs10").css({"color": "red"}); 
+                }
+            } else { 
+                $(".ctable10").css({"color": "green"});
+            }
+
+            $(".ctable10").click(function(){
+                $(".ctable10").css({"color": "red"});
+                $(".chairs10").css({"color": "red"});
+                localStorage.setItem('booked', true); 
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>
