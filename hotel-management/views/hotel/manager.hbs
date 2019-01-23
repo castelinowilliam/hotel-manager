@@ -64,63 +64,15 @@
                 <td id="food">{{ this.qty9 }}</td>
                 <td id="food" onkeyup="total()">{{ this.de2 }}</td>
             </tr> 
-            <!--<tr>
-                <td colspan="2"><button onclick="total()" class="btn btn-primary">Total</button></td>
-                <td id="total"></td>
-            </tr>
-            <tr>
-                <td rowspan="2">GST</td>
-                <td>CGST</td>
-                <td>2.5%</td>
-            </tr>
-            <tr>
-                <td>SGST</td>
-                <td>2.5%</td>
-            </tr>-->
             <tr>
                 <td colspan="2">Total</td>
                 <td id="food">{{ this.finaltotal }}</td>
             </tr>
-            <!--<tr>
-                <td colspan="2"><button onclick="ftotal()" class="btn btn-success">Final Total</button></td>
-                <td id="ftotal"></td>
-            </tr>-->
         </table>
         <a href="/manager/print/{{ this._id }}" class="btn btn-success btn-lg float-right"> Print </a>
         <a href="/manager/delete/{{ this._id }}" class="btn btn-danger btn-lg float-right"> Paid </a>
     </div>
     </div>
     {{/each}}
-    <!--<script type="text/javascript">
-        function total(){
-            var v1 = +document.getElementById('p1').innerHTML;
-            console.log(v1);
-            var v2 = +document.getElementById('p2').innerHTML;
-            console.log(v2);
-            var v3 = +document.getElementById('p3').innerHTML;
-            console.log(v3);
-            var v4 = +document.getElementById('p4').innerHTML;
-            console.log(v4);
-            var v5 = +document.getElementById('p5').innerHTML;
-            console.log(v5);
-            var v6 = +document.getElementById('p6').innerHTML;
-            console.log(v6);
-            var v7 = +document.getElementById('p7').innerHTML;
-            console.log(v7);
-            var v8 = +document.getElementById('p8').innerHTML;
-            console.log(v8);
-            var v9 = +document.getElementById('p9').innerHTML;
-            console.log(v9);
-            var total = v1 + v2 + v3 + v4 + v5 + v6 + v7 + v8 + v9;
-            document.getElementById("total").innerHTML = +total;
-        }
-
-       function ftotal(){
-            var ft = +document.getElementById("total").innerHTML;
-            console.log(ft);
-            var ftotal = ft * (1 + 0.050);
-            document.getElementById("ftotal").innerHTML = +ftotal;
-       } 
-    </script>-->
 </body>
 </html>
