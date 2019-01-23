@@ -222,7 +222,66 @@ app.get('/manager/print/:id', function (req, res, next) {
       else{
         //console.log('Orders', docs);
 
-        let orderTemplate = '<div>{{#each docs}}<div><h3>Order placed on:</h3><p>{{ this.time }}</p></div><br><hr><br>{{/each}}</div>';
+        let orderTemplate = '<div>{{#each docs}}<div>'+
+                            '<center><h2>Indian Flavours</h2></center><hr>'+
+                            '<p align="center">{{ this.time }}</p>'+
+                            '<table style="border:1px solid black" border="1" align="center">'+
+                            '<tr>'+
+                            '<th>Food items</th>'+
+                            '<th>Quantity</th>'+
+                            '<th>Price</th>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.start1 }}</td>'+
+                            '<td>{{ this.qty1 }}</td>'+
+                            '<td>{{ this.s1 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.start2 }}</td>'+
+                            '<td>{{ this.qty2 }}</td>'+
+                            '<td>{{ this.s2 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.main1 }}</td>'+
+                            '<td>{{ this.qty3 }}</td>'+
+                            '<td>{{ this.m1 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.main2 }}</td>'+
+                            '<td>{{ this.qty4 }}</td>'+
+                            '<td>{{ this.m2 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.main3 }}</td>'+
+                            '<td>{{ this.qty5 }}</td>'+
+                            '<td>{{ this.m3 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.drink1 }}</td>'+
+                            '<td>{{ this.qty6 }}</td>'+
+                            '<td>{{ this.dr1 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.drink2 }}</td>'+
+                            '<td>{{ this.qty7 }}</td>'+
+                            '<td>{{ this.dr2 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.des1 }}</td>'+
+                            '<td>{{ this.qty8 }}</td>'+
+                            '<td>{{ this.de1 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td>{{ this.des2 }}</td>'+
+                            '<td>{{ this.qty9 }}</td>'+
+                            '<td>{{ this.de2 }}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                            '<td colspan="2">Total</td>'+
+                            '<td id="food">{{ this.finaltotal }}</td>'+
+                            '</tr>'+
+                            '</table'+
+                            '</div><br><hr><br>{{/each}}</div>';
         // docs.forEach( doc => {
         //   msg = msg.concat(`${new Date(doc.time)}`);
         // });

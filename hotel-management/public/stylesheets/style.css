@@ -38,9 +38,14 @@ th{
 }
 
 .shift{
+    border: 1px solid black;
     text-align: right;
     overflow: hidden;
     white-space: nowrap; 
+}
+
+.qtyid{
+    border: 1px solid black;
 }
 
 #ManTable{

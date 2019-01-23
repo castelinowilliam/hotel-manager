@@ -2,7 +2,6 @@
 <script type="text/javascript">
 
          function ftotal(){
-            alert("Hello");
             var v1 = +document.getElementById('total').value;
             console.log(v1);
             var v2 = +document.getElementById('totala').value;
@@ -276,10 +275,11 @@
             <button type="button" id="ftotal" class="btn btn-primary">Total</button>
         </div>
         <div class="form-group col-md-4">
-        <input class="form-control" type="text" name="finaltotal" id="finaltotal" readonly>
+        <input class="form-control" type="text"  onchange="" name="finaltotal" id="finaltotal" readonly>
         </div>
     </div>
         <button type="submit" class="btn-danger btn-lg">Submit</button>
         <!--<a href="/get-data" class="btn btn-danger" role="button">Manager</a>  -->      
  </form>
 </div>
+
