@@ -176,9 +176,7 @@ app.get('/api/profile', (req, res) => {
         orders: data
       });
     }
-    
   })
-  
 })
 
 app.get('/view', function(req, res){
