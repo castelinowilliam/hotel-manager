@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-    {{> header}}
      <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
       crossorigin="anonymous"></script>
-
-    <h1>Transactions</h1>
-    <div>
-        <form>
-            <input type="date" name="transDate" id="transDate">
-            <button type="button" id="ordersBtn">SUBMIT</button>
-        </form>
+    <div class="adjust" style="margin-top: 8%">
+        <h1>Transactions</h1>
+        <div>
+            <form>
+                <input type="date" name="transDate" id="transDate">
+                <button type="button" id="ordersBtn">SUBMIT</button>
+            </form>
+        </div>
     </div>
+
     <script>
     $(document).ready(function(){
         $('#ordersBtn').click(function() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        //document.getElementById("orders").innerHTML = this.responseText;
-        console.log(this.responseText);
+
+            orders = JSON.parse(this.responseText)
+            order = orders["orders"]
+        document.getElementById("orders").innerHTML = order[0]._id;
+       console.log(orders);
     }
   };
   var transDate = $('#transDate').val();
@@ -38,9 +42,9 @@
             });
     });
     </script>
+    <div id="orders" style="margin-top:10%;margin-left:30%">
 
-    <div id="orders">
+    </div>    
 
-    </div>
 </body>
 </html>

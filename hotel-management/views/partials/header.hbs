@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded fixed-top">
   <a class="navbar-brand" href="/manager">Dashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,24 +9,32 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <a class="nav-link" href="/seats">
-          <i class="fas fa-couch"></i> Book Seats
-         </a>
+        <div class="btn-group">
+          <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-list"></i>
+            Options
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/seats">Book seat</a>
+            <a class="dropdown-item" href="/">Take away</a>
+          </div>
+        </div>
       </li>
-      <li class="dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> 
-          User Profile
-        </a>
-        <ul class="dropdown-menu">
-          {{#if login}}
-              <li><a class="dropdown-item" href="/user/profile">Account</a></li>
-              <li role="separator" class="divider"></li>
-              <a class="dropdown-item" href="/user/logout">Logout</a>
-          {{else}}
-              <li><a class="dropdown-item" href="/user/signup">Sign Up</a></li>
-              <li><a class="dropdown-item" href="/user/signin">Sign In</a></li>
-          {{/if}}
-        </ul>
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
+            User Profile
+          </button>
+            <ul class="dropdown-menu">
+              {{#if login}}
+                  <li><a class="dropdown-item" href="/mprofile">Account</a></li>
+                  <li role="separator" class="divider"></li>
+                  <a class="dropdown-item" href="/user/logout">Logout</a>
+              {{else}}
+                  <li><a class="dropdown-item" href="/user/signup">Sign Up</a></li>
+                  <li><a class="dropdown-item" href="/user/signin">Sign In</a></li>
+              {{/if}}
+            </ul>
+        </div>
       </li>
     </ul>
   </div>

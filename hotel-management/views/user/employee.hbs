@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    {{> header}}
+    {{> sidenav}}
+    <div class="adjust" style="margin-top: 8%">
+        <h1>Employee Details</h1>
+        <a href="/form" type="button" class="btn btn-primary">Add Employee</a>
+        <div class="row">
+        {{#each emp}}
+                <div class="card" style="width: 18rem; margin-top: 5%">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.fn}}&nbsp;{{this.ln}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{this.design}}</h6>
+                        <p class="card-text">{{this.mob}}</p>
+                        <p class="card-text">{{this.email}}</p>
+                        <a href="/display/{{this._id}}" class="card-link">Details</a>
+                        <a href="employee/delete/{{ this._id }}" class="card-link">Delete</a>
+                    </div>
+                </div>
+        {{/each}}
+        </div>
+    </div>
+</body>
+</html>

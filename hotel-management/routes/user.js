@@ -6,8 +6,8 @@ var passport = require('passport');
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
-router.get('/profile', isLoggedIn, function(req, res, next){
-    res.render('user/profile');
+router.get('/mprofile', isLoggedIn, function(req, res, next){
+    res.render('user/mprofile');
 });
 
 router.get('/logout', isLoggedIn, function(req, res, next){
@@ -33,7 +33,7 @@ router.post('/signup', passport.authenticate('local.signup', {
         req.session.oldUrl = null;
         res.redirect(oldUrl);
     }else {
-        res.redirect('/user/profile');
+        res.redirect('/mprofile');
     }
 });
 
@@ -51,7 +51,7 @@ router.post('/signin', passport.authenticate('local.signin', {
         req.session.oldUrl = null;
         res.redirect(oldUrl);
     }else {
-        res.redirect('/user/profile');
+        res.redirect('/mprofile');
     }
 });
 

@@ -10,6 +10,7 @@
       integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
       crossorigin="anonymous">
     </script>
+    <div style="margin-top: 8%">
     <table>
         <tr>
             <td>
@@ -17,7 +18,7 @@
                     <table>
                         <tr>
                             <td></td>
-                            <td align="center"><i class="fas fa-chair fa-2x green chairs"></i></td>
+                            <td align="center"><i class="fas fa-chair fa-2x green chairs"></i>
                             <td></td>
                         </tr>
                         <tr>
@@ -117,7 +118,7 @@
             </td>
         </tr>
         <tr>
-            <td></td>
+        <td></td>
             <td>
                 <div>
                     <table>
@@ -291,6 +292,7 @@
             </td>
         </tr>
     </table>
+    </div>
     <script>
         $(function(){
             if (localStorage) { 
@@ -340,7 +342,7 @@
                 $(".ctable3").css({"color": "green"});
             }
 
-            $(".ctable10").click(function(){
+            $(".ctable3").click(function(){
                 $(".ctable3").css({"color": "red"});
                 $(".chairs3").css({"color": "red"});
                 localStorage.setItem('booked3', true); 
@@ -454,7 +456,7 @@
                 $(".ctable9").css({"color": "green"});
             }
 
-            $(".ctable10").click(function(){
+            $(".ctable9").click(function(){
                 $(".ctable9").css({"color": "red"});
                 $(".chairs9").css({"color": "red"});
                 localStorage.setItem('booked9', true); 

@@ -10,58 +10,67 @@
         crossorigin="anonymous">
     </script>
     <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <!--<script src="https://github.com/js-cookie/js-cookie"></script>-->
     {{#each orders }}
         <div id="myid{{ @index }}">
-        <table id="table1">
-            <tr>
-                <td colspan="2"> Table No.{{ this.tableno }}</td>
-            </tr>
-            <tr>
-                <th>Food items</th>
-                <th>Quantity</th>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.start1 }}</td>
-                <td class="qtyid">{{ this.qty1 }}</td>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.start2 }}</td>
-                <td class="qtyid">{{ this.qty2 }}</td>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.main1 }}</td>
-                <td class="qtyid">{{ this.qty3 }}</td>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.main2 }}</td>
-                <td class="qtyid">{{ this.qty4 }}</td>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.main3 }}</td>
-                <td class="qtyid">{{ this.qty5 }}</td>
-            </tr>        
-            <tr>
-                <td class="shift">{{ this.drink1 }}</td>
-                <td class="qtyid">{{ this.qty6 }}</td>
-            </tr>    
-            <tr>
-                <td class="shift">{{ this.drink2 }}</td>
-                <td class="qtyid">{{ this.qty7 }}</td>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.des1 }}</td>
-                <td class="qtyid">{{ this.qty8 }}</td>
-            </tr>
-            <tr>
-                <td class="shift">{{ this.des2 }}</td>
-                <td class="qtyid">{{ this.qty9 }}</td>
-            </tr> 
-            <tr>
-                <td colspan="2"><button class="btn-primary btn-lg" id="done">Done</button></td>
-                <!--<td><a href="javascript:void(null);" id="hideit">Close</a></td>-->
-            </tr>
-        </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td colspan="2"> Table No.{{ this.tableno }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Food Items</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{this.start1}}</td>
+                        <td>{{this.qty1}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>{{this.start2}}</td>
+                        <td>{{this.qty2}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>{{this.main1}}</td>
+                        <td>{{this.qty3}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>{{this.main2}}</td>
+                        <td>{{this.qty4}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>{{this.main3}}</td>
+                        <td>{{this.qty5}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>{{this.drink1}}</td>
+                        <td>{{this.qty6}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>{{this.drink2}}</td>
+                        <td>{{this.qty7}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>{{this.des1}}</td>
+                        <td>{{this.qty8}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>{{this.des2}}</td>
+                        <td>{{this.qty9}}</td>
+                    </tr>
+                </tbody>    
+            </table>    
         </div>
     <script>
         $(function(){
@@ -81,7 +90,7 @@
             });
         });
     </script>
-        <script>
+    <script>
         $(function(){
         
             if (localStorage) { 
@@ -99,7 +108,7 @@
             });
         });
     </script>
-        <script>
+    <script>
         $(function(){
         
             if (localStorage) { 
@@ -117,7 +126,7 @@
             });
         });
     </script>
-        <script>
+    <script>
         $(function(){
         
             if (localStorage) { 

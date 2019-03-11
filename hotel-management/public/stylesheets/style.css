@@ -49,7 +49,6 @@ th{
 }
 
 #ManTable{
-    border: 1px solid black;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -58,7 +57,6 @@ th{
 }
 
 #design{
-    background-color: aquamarine;
     display: inline-block;
     width: 70%;
 }
@@ -77,4 +75,9 @@ th{
 
 .green{
     color: green;
+}
+
+.adjust{
+    position: absolute;
+    left: 14%;
 }

@@ -6,35 +6,35 @@ mongoose.connect("mongodb://localhost:27017/menus",{ useNewUrlParser: true});
 var  drinks = [
     new Product5({
         title: 'Tea',
-        price: 20
+        price: 20.00
     }),
     new Product5({
         title: 'Black Tea',
-        price: 25
+        price: 25.00
     }),
     new Product5({
         title: 'Coffee',
-        price: 25
+        price: 25.50
     }),
     new Product5({
         title: 'Milk',
-        price: 20
+        price: 20.00
     }),
     new Product5({
         title: 'Cold drinks',
-        price: 25
+        price: 25.50
     }),
     new Product5({
         title: 'Sweet Lassi',
-        price: 40
+        price: 40.00
     }),
     new Product5({
         title: 'Khara Lassi',
-        price: 35
+        price: 35.00
     }),
     new Product5({
        title: 'Milkshakes',
-        price: 50
+        price: 50.50
     }),
 ];
 

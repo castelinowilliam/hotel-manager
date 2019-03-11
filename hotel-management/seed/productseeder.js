@@ -6,43 +6,43 @@ mongoose.connect("mongodb://localhost:27017/menus",{ useNewUrlParser: true});
 var dishes = [
     new Product({
         title: 'Stuffed Capsicum',
-        price: 50
+        price: 50.00
     }),
     new Product({
         title: 'Manchurian',
-        price: 70
+        price: 70.00
     }),
     new Product({
         title: 'Manchurian Gravy',
-        price: 80
+        price: 80.00
     }),
     new Product({
         title: 'Crispy Corn',
-        price: 60
+        price: 60.00
     }),
     new Product({
         title: 'Aloo Chat',
-        price: 50
+        price: 50.00
     }),
     new Product({
         title: 'Spring Rolls',
-        price: 70
+        price: 70.00
     }),
     new Product({
         title: 'Veg Momos',
-        price: 70
+        price: 70.00
     }),
     new Product({
         title: 'Veg Kebab',
-        price: 100
+        price: 100.00
     }),
     new Product({
         title: 'Moong Dal bhel',
-        price: 50
+        price: 50.00
     }),
     new Product({
         title: 'Veg Lollipop',
-        price: 90
+        price: 90.00
     }),
 ];
 

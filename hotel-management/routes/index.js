@@ -7,6 +7,7 @@ var Product4 = require('../models/dish4');
 var Product5 = require('../models/drinks1');
 var Product6 = require('../models/drinks2');
 var Product7 = require('../models/desserts');
+//var employee = require('../models/emp');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -59,5 +60,18 @@ router.get('/', function(req, res, next) {
 });
 
 });
+
+/*router.get('/form', function (req, res, next) {
+  employee.find((err, docE)=>{
+    var details = docE;
+    console.log(details);
+    var data2 = {
+      details
+    }
+    res.render('user/employee', {
+      data2: data2
+    });
+  });
+});*/
 
 module.exports = router;

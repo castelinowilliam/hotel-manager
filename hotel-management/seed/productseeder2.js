@@ -6,43 +6,43 @@ mongoose.connect("mongodb://localhost:27017/menus",{ useNewUrlParser: true});
 var  main1 = [
     new Product2({
         title: 'Normal Roti',
-        price: 10
+        price: 10.00
     }),
     new Product2({
         title: 'Butter Roti',
-        price: 15
+        price: 15.00
     }),
     new Product2({
         title: 'Tandoor Roti',
-        price: 18
+        price: 18.00
     }),
     new Product2({
         title: 'Ghee Roti',
-        price: 15
+        price: 15.00
     }),
     new Product2({
         title: 'Spl Roti',
-        price: 20
+        price: 20.00
     }),
     new Product2({
         title: 'Chappati',
-        price: 10
+        price: 10.00
     }),
     new Product2({
         title: 'Ghee Chappati',
-        price: 15
+        price: 15.00
     }),
     new Product2({
         title: 'Butter Chappati',
-        price: 15
+        price: 15.00
     }),
     new Product2({
         title: 'Puri (1 pc)',
-        price: 07
+        price: 7.00
     }),
     new Product2({
         title: 'Pav (1 pc)',
-        price: 05
+        price: 5.00
     }),
 ];
 

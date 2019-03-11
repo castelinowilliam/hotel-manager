@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    {{> header}}
+    {{> sidenav}}
+    <div class="adjust" style="margin-top: 8%">
+        <h1>Profile</h1>
+        {{#each man}}
+        <div class="card" style="width: 70rem;">
+            <h5 class="card-header">Personal Details</h5>
+            <div class="card-body">
+                <h5 class="card-title">Name&nbsp;{{this.fn1}}&nbsp;{{this.ln1}}</h5>
+                <p class="card-text">Batch ID&nbsp;{{this.bid1}}</p>
+                <p class="card-text">DOB&nbsp;{{this.dob1}}</p>
+                <p class="card-text">Blood Group&nbsp;{{this.bg}}</p>
+            </div>
+        </div>
+        <div class="card" style="width: 70rem; margin-top: 10px">
+            <h5 class="card-header">Address</h5>
+            <div class="card-body">
+                <h6 class="card-title">Address1&nbsp;{{this.add1}}</h6>
+                <h6 class="card-title">Address2&nbsp;{{this.add12}}</h6>
+            </div>
+        </div>
+        <div class="card" style="width: 70rem; margin-top: 10px">
+            <h5 class="card-header">Contact Details</h5>
+            <div class="card-body">
+                <h6 class="card-title">Mobile&nbsp;{{this.mobile1}}</h6>
+                <h6 class="card-title">Landline&nbsp;{{this.land1}}</h6>
+                <h6 class="card-title">Email&nbsp;{{this.email1}}</h6>
+            </div>
+        </div>
+        <div style="margin-top: 3%">
+            <a href="/update/{{ this._id }}" class="btn btn-primary">Update</a>
+        </div>
+        {{/each}}
+        <!--<a href="/mform" class="btn btn-primary">Add</a>-->
+    </div>
+</body>
+</html>

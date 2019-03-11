@@ -2,77 +2,183 @@
 <html lang="en">
 <head>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
+    <script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous">
+    </script>
     {{> header}}
     {{#each ordersM }}
-    <div class="wrapper">
+    <div class="wrapper" style="margin-top: 10%" id="div{{ @index }}">
         <div id="design">
             <h4>Indian Flavors</h4>
             <h6>{{ this.time }}</h6>
-        <table id="ManTable">
-            <tr>
-                <td colspan="3"> Table No.{{ this.tableno }}</td>
-            </tr>
-            <tr>
-                <th>Food items</th>
-                <th>Quantity</th>
-                <th>Price</th>
-            </tr>
-            <tr>
-                <td class="shift" id="food">{{ this.start1 }}</td>
-                <td id="food">{{ this.qty1 }}</td>
-                <td id="food">{{ this.s1 }}</td>
-            </tr>
-            <tr>
-                <td class="shift"  id="food">{{ this.start2 }}</td>
-                <td id="food">{{ this.qty2 }}</td>
-                <td id="food" onkeyup="total()">{{ this.s2 }}</td>
-            </tr>
-            <tr>
-                <td class="shift" id="food">{{ this.main1 }}</td>
-                <td id="food">{{ this.qty3 }}</td>
-                <td id="food" onkeyup="total()">{{ this.m1 }}</td>
-            </tr>
-            <tr>
-                <td class="shift" id="food">{{ this.main2 }}</td>
-                <td id="food">{{ this.qty4 }}</td>
-                <td  id="food" onkeyup="total()">{{ this.m2 }}</td>
-            </tr>
-            <tr>
-                <td class="shift" id="food">{{ this.main3 }}</td>
-                <td id="food">{{ this.qty5 }}</td>
-                <td id="food" onkeyup="total()">{{ this.m3 }}</td>
-            </tr>        
-            <tr>
-                <td class="shift" id="food">{{ this.drink1 }}</td>
-                <td id="food">{{ this.qty6 }}</td>
-                <td id="food" onkeyup="total()">{{ this.dr1 }}</td>
-            </tr>    
-            <tr>
-                <td class="shift" id="food">{{ this.drink2 }}</td>
-                <td id="food">{{ this.qty7 }}</td>
-                <td  id="food" onkeyup="total()">{{ this.dr2 }}</td>
-            </tr>
-            <tr>
-                <td class="shift"  id="food">{{ this.des1 }}</td>
-                <td id="food">{{ this.qty8 }}</td>
-                <td id="food" onkeyup="total()">{{ this.de1 }}</td>
-            </tr>
-            <tr>
-                <td class="shift" id="food">{{ this.des2 }}</td>
-                <td id="food">{{ this.qty9 }}</td>
-                <td id="food" onkeyup="total()">{{ this.de2 }}</td>
-            </tr> 
-            <tr>
-                <td colspan="2">Total</td>
-                <td id="food">{{ this.finaltotal }}</td>
-            </tr>
-        </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="3"> Table No.{{ this.tableno }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Food Item</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ this.start1 }}</td>
+                            <td>{{ this.qty1 }}</td>
+                            <td>{{ this.s1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.start2 }}</td>
+                            <td>{{ this.qty2 }}</td>
+                            <td>{{ this.s2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.main1 }}</td>
+                            <td>{{ this.qty3 }}</td>
+                            <td>{{ this.m1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.main2 }}</td>
+                            <td>{{ this.qty4 }}</td>
+                            <td>{{ this.m2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.main3 }}</td>
+                            <td>{{ this.qty5 }}</td>
+                            <td>{{ this.m3 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.drink1 }}</td>
+                            <td>{{ this.qty6 }}</td>
+                            <td>{{ this.dr1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.drink2 }}</td>
+                            <td>{{ this.qty7 }}</td>
+                            <td>{{ this.dr2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.des1 }}</td>
+                            <td>{{ this.qty8 }}</td>
+                            <td>{{ this.de1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ this.des1 }}</td>
+                            <td>{{ this.qty9 }}</td>
+                            <td>{{ this.de2 }}</td>
+                        </tr>
+                        <tr id="food">
+                            <td colspan="2">Total</td>
+                            <td>{{ this.finaltotal }}</td>
+                        </tr>
+                </table>
         <a href="/manager/print/{{ this._id }}" class="btn btn-success btn-lg float-right"> Print </a>
-        <a href="/manager/delete/{{ this._id }}" class="btn btn-danger btn-lg float-right"> Paid </a>
+        <button class="btn btn-danger btn-lg float-right"  id="myid{{ @index }}"> Done </button>
+        <form action="/charge" method="POST">
+            <script
+            src ="http://checkout.stripe.com/checkout.js"
+            class ="stripe-button"
+            data-key ="pk_test_I0WfvfmzFwTk2PverDJhYTuT"
+            data-amount ="{{this.finaltotal}}notroundof"
+            data-name ="Bill"
+            data-description ="Final payment"
+            data-currency="jpy"
+            ></script>
+            <input type="hidden" name="chargeAmount" value="{{this.finaltotal}}">
+        </form>
     </div>
     </div>
-    {{/each}}
+    {{/each}}    
+    <script>
+        $(function(){
+            if (localStorage) { 
+                if (localStorage.getItem('visited01')) { 
+                    $("#div0").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid0").click(function(){
+                $("#div0").hide();
+                localStorage.setItem('visited01', true); 
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            if (localStorage) { 
+                if (localStorage.getItem('visited02')) { 
+                    $("#div1").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid1").click(function(){
+                $("#div1").hide();
+                localStorage.setItem('visited02', true); 
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            if (localStorage) { 
+                if (localStorage.getItem('visited03')) { 
+                    $("#div2").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid2").click(function(){
+                $("#div2").hide();
+                localStorage.setItem('visited03', true); 
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            if (localStorage) { 
+                if (localStorage.getItem('visited04')) { 
+                    $("#div3").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid3").click(function(){
+                $("#div3").hide();
+                localStorage.setItem('visited04', true); 
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            if (localStorage) { 
+                if (localStorage.getItem('visited05')) { 
+                    $("#div4").hide(); 
+                }
+            } else { 
+                $('div').show();
+            }
+
+            $("#myid4").click(function(){
+                $("#div4").hide();
+                localStorage.setItem('visited05', true); 
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>

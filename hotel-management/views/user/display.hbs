@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {{> header}}
+    {{> sidenav}}
+    {{#each detail}}
+        <div class="adjust" style="margin-top:8%">
+            <h1>{{this.fn}}&nbsp;{{this.ln}}</h1>
+            <h2>{{this.design}}</h2>
+            <h2>{{this.mob}}</h2>
+            <h3>{{this.email}}</h3>
+            <h5>{{this.add}}</h5>
+            <h5>{{this.pin}}</h5>
+            <h5>{{this.city}}</h5>
+            <h5>{{this.state}}</h5>
+        </div>
+    {{/each}}
+    <div class="adjust" style="margin-top:35%"><a href="/employee" class="btn btn-primary">Back</a></div>
+</body>
+</html>
