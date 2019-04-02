@@ -8,11 +8,13 @@
 </head>
 
 <body>
+    {{> header}}
+    {{> sidenav}}
      <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
       crossorigin="anonymous"></script>
-    <div class="adjust" style="margin-top: 8%">
+    <div class="adjust" style="margin-top: 8%;margin-left: 5%">
         <h1>Transactions</h1>
         <div>
             <form>
@@ -20,7 +22,6 @@
                 <button type="button" id="ordersBtn">SUBMIT</button>
             </form>
         </div>
-    </div>
 
     <script>
     $(document).ready(function(){
@@ -29,10 +30,19 @@
         xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-            orders = JSON.parse(this.responseText)
-            order = orders["orders"]
-        document.getElementById("orders").innerHTML = order[0]._id;
-       console.log(orders);
+            summary = JSON.parse(this.responseText)
+           orders = summary["orders"]
+            
+            document.getElementById("orders").innerHTML = "";
+            var table_no = []
+            var finaltotal = []
+            for( i=0; i<orders.length ;i++){                
+                table_no[i] = orders[i].tableno  
+                finaltotal[i] = orders[i].finaltotal
+                document.getElementById("orders").innerHTML += '<br><table border=1><tr><td>Table no.</td><td>Total Amount</td></tr><tr><td>'+ table_no[i] + '</td><td>' +finaltotal[i] +'</td></tr></table>';
+            }
+               console.log(finaltotal);
+                console.log(table_no);
     }
   };
   var transDate = $('#transDate').val();
@@ -42,9 +52,10 @@
             });
     });
     </script>
-    <div id="orders" style="margin-top:10%;margin-left:30%">
+
+    <div id="orders">
 
     </div>    
-
+</div>
 </body>
 </html>

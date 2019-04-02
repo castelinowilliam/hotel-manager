@@ -61,17 +61,4 @@ router.get('/', function(req, res, next) {
 
 });
 
-/*router.get('/form', function (req, res, next) {
-  employee.find((err, docE)=>{
-    var details = docE;
-    console.log(details);
-    var data2 = {
-      details
-    }
-    res.render('user/employee', {
-      data2: data2
-    });
-  });
-});*/
-
 module.exports = router;

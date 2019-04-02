@@ -17,7 +17,6 @@ var templatetopdf = require('html-template-pdf');
 let pdf = require('handlebars-pdf');
 var DateOnly = require('mongoose-dateonly')(mongoose);
 var stripe = require("stripe")("pk_test_I0WfvfmzFwTk2PverDJhYTuT");
-//var employee = require('../hotel-management/models/emp');
 
 var indexRouter = require('./routes/index');
 var userRoutes = require('./routes/user');
@@ -67,7 +66,8 @@ var schema = new Schema({
     des2: {type: String},
     qty9: {type: Number},
     de2: {type: Number},
-    finaltotal: {type: Number}
+    finaltotal: {type: Number},
+    fix:{type: Number}
 });
 
 var schema2 = new Schema({
@@ -96,39 +96,6 @@ var schema3 = new Schema({
   email1: {type: String},  
   mobile1: {type: Number},
   land1: {type: Number},
-});
-
-var schema = new Schema({
-  time: {type: Date, required:true},
-  tableno: {type: Number, required:true},
-  start1: {type: String},
-  qty1: {type: Number},
-  s1: {type: Number},
-  start2: {type: String},
-  qty2: {type: Number},
-  s2: {type: Number},
-  main1: {type: String},
-  qty3: {type: Number},
-  m1: {type: Number},
-  main2: {type: String},
-  qty4: {type: Number},
-  m2: {type: Number},
-  main3: {type: String},
-  qty5: {type: Number},
-  m3: {type: Number},
-  drink1: {type: String},
-  qty6: {type: Number},
-  dr1: {type: Number},
-  drink2: {type: String},
-  qty7: {type: Number},
-  dr2: {type: Number},
-  des1: {type: String},
-  qty8: {type: Number},
-  de1: {type: Number},
-  des2: {type: String},
-  qty9: {type: Number},
-  de2: {type: Number},
-  finaltotal: {type: Number}
 });
 
 var employee = mongoose.model('employee', schema2);
@@ -195,6 +162,7 @@ app.post('/new', function(req, res){
     qty9: req.body.qty9,
     de2: req.body.de2,
     finaltotal: req.body.finaltotal,
+    fix: req.body.fix,
   }).save(function(err, result){
     if(err){
       res.json(err);
@@ -391,9 +359,7 @@ app.get('/employee/delete/:id', function(req, res, next){
 
 //payment
 app.get('/paysuccess', function (req, res) {
-  res.render('partials/paysuccess', {
-
-  });
+  res.render('partials/paysuccess');
 });
 
 app.post('/charge', function (req, res) {
@@ -401,7 +367,7 @@ app.post('/charge', function (req, res) {
   var chargeAmount = req.body.chargeAmount;
   var charge = stripe.charges.create({
     amount: chargeAmount,
-    currency: "jpy",
+    currency: "inr",
     source: token
   },function (err, charge) {
       if(err & err.type === "StripeCardError"){
@@ -410,6 +376,7 @@ app.post('/charge', function (req, res) {
   });
   console.log("Successful");
   res.redirect('/paysuccess');
+  //res.jsonp({success: true})
 });
 
 //printing the bill in pdf format
@@ -425,7 +392,7 @@ app.get('/manager/print/:id', function (req, res, next) {
         console.log('Orders', doc);
                 let orderTemplate = '<div><center><h2>Indian Flavours</h2></center><hr>'+
                             '<p align="center">{{ doc.time }}</p>'+
-                            '<table width="400" height="300" border="1" align="center">'+
+                            '<table width="400" height="300" align="center" backgroundcolor="green">'+
                             '<tr>'+
                             '<th>Food items</th>'+
                             '<th>Quantity</th>'+

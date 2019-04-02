@@ -85,16 +85,19 @@
             src ="http://checkout.stripe.com/checkout.js"
             class ="stripe-button"
             data-key ="pk_test_I0WfvfmzFwTk2PverDJhYTuT"
-            data-amount ="{{this.finaltotal}}notroundof"
+            data-amount ="{{this.fix}}notroundof"
             data-name ="Bill"
             data-description ="Final payment"
-            data-currency="jpy"
+            data-currency="inr"
             ></script>
             <input type="hidden" name="chargeAmount" value="{{this.finaltotal}}">
         </form>
     </div>
     </div>
-    {{/each}}    
+    {{/each}}
+    <script>
+        
+    </script>    
     <script>
         $(function(){
             if (localStorage) { 
