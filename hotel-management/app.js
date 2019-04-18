@@ -392,7 +392,7 @@ app.get('/manager/print/:id', function (req, res, next) {
         console.log('Orders', doc);
                 let orderTemplate = '<div><center><h2>Indian Flavours</h2></center><hr>'+
                             '<p align="center">{{ doc.time }}</p>'+
-                            '<table width="400" height="300" align="center" backgroundcolor="green">'+
+                            '<table width="400" height="300" border="1" align="center" backgroundcolor="green">'+
                             '<tr>'+
                             '<th>Food items</th>'+
                             '<th>Quantity</th>'+
